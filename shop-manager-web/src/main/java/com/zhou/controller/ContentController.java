@@ -24,7 +24,7 @@ public class ContentController {
 	@ResponseBody
 	public ShopResult addContent(TbContent content) {
 		//调用服务把内容数据保存到数据库
-		ShopResult e3Result = contentService.addContent(content);
-		return e3Result;
+		ShopResult shopResult = contentService.addContent(content);
+		return shopResult;
 	}
 }

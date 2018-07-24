@@ -37,6 +37,7 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath:spring/springmvc.xml</param-value>
 		</init-param>
+		<!--tomcat启动之后便加载DispatcherServlet，如果不配置的话，需要等请求访问的时候才会加载DispatcherServlet-->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>

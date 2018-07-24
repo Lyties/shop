@@ -53,14 +53,14 @@ public class OrderController {
 		orderInfo.setUserId(user.getId());
 		orderInfo.setBuyerNick(user.getUsername());
 		//调用服务生成订单
-		ShopResult e3Result = orderService.createOrder(orderInfo);
+		ShopResult shopResult = orderService.createOrder(orderInfo);
 		//如果订单生成成功，需要删除购物车
-		if (e3Result.getStatus() == 200) {
+		if (shopResult.getStatus() == 200) {
 			//清空购物车
 			cartService.clearCartItem(user.getId());
 		}
 		//把订单号传递给页面
-		request.setAttribute("orderId", e3Result.getData());
+		request.setAttribute("orderId", shopResult.getData());
 		request.setAttribute("payment", orderInfo.getPayment());
 		//返回逻辑视图
 		return "success";

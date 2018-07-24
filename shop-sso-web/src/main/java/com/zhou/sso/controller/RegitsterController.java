@@ -28,15 +28,15 @@ public class RegitsterController {
 	@RequestMapping("/user/check/{param}/{type}")
 	@ResponseBody
 	public ShopResult checkData(@PathVariable String param, @PathVariable Integer type) {
-		ShopResult e3Result = registerService.checkData(param, type);
-		return e3Result;
+		ShopResult shopResult = registerService.checkData(param, type);
+		return shopResult;
 	}
 	
 	@RequestMapping(value="/user/register", method=RequestMethod.POST)
 	@ResponseBody
 	public ShopResult register(TbUser user) {
-		ShopResult e3Result = registerService.register(user);
-		return e3Result;
+		ShopResult shopResult = registerService.register(user);
+		return shopResult;
 	}
 	
 }

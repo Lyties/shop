@@ -72,7 +72,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 			//更新到数数据库
 			contentCategoryMapper.updateByPrimaryKey(parent);
 		}
-		//返回结果，返回E3Result，包含pojo
+		//返回结果，返回ShopResult，包含pojo
 		return ShopResult.ok(contentCategory);
 	}
 

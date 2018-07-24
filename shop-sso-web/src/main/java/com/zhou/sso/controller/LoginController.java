@@ -36,14 +36,14 @@ public class LoginController {
 	@ResponseBody
 	public ShopResult login(String username, String password,
 			HttpServletRequest request, HttpServletResponse response) {
-		ShopResult e3Result = loginService.userLogin(username, password);
+		ShopResult shopResult = loginService.userLogin(username, password);
 		//判断是否登录成功
-		if(e3Result.getStatus() == 200) {
-			String token = e3Result.getData().toString();
+		if(shopResult.getStatus() == 200) {
+			String token = shopResult.getData().toString();
 			//如果登录成功需要把token写入cookie
 			CookieUtils.setCookie(request, response, TOKEN_KEY, token);
 		}
 		//返回结果
-		return e3Result;
+		return shopResult;
 	}
 }

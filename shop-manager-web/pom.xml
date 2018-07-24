@@ -9,6 +9,12 @@
 	<artifactId>shop-manager-web</artifactId>
 	<packaging>war</packaging>
 	<dependencies>
+		<!-- 依赖shop-common -->
+        <dependency>  
+            <groupId>com.zhou</groupId>  
+            <artifactId>shop-common</artifactId>  
+            <version>0.0.1-SNAPSHOT</version>  
+        </dependency>
 		<dependency>
 			<groupId>com.zhou</groupId>
 			<artifactId>shop-manager-interface</artifactId>

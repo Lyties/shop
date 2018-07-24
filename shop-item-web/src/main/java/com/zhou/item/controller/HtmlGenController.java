@@ -34,7 +34,7 @@ public class HtmlGenController {
 		Map data = new HashMap<>();
 		data.put("hello", 123456);
 		//指定文件输出的路径及文件名
-		Writer out = new FileWriter(new File("D:/temp/JavaEE/freemarker/hell2.html"));
+		Writer out = new FileWriter(new File("D:/temp/freemarker/hell2.html"));
 		//输出文件
 		template.process(data, out);
 		//关闭流

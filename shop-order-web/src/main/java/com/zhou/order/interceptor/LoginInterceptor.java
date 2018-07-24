@@ -43,9 +43,9 @@ public class LoginInterceptor implements HandlerInterceptor {
 			return false;
 		}
 		//如果token存在，需要调用sso系统的服务，根据token取用户信息
-		ShopResult e3Result = tokenService.getUserByToken(token);
+		ShopResult shopResult = tokenService.getUserByToken(token);
 		//如果取不到，用户登录已经过期，需要登录。
-		if (e3Result.getStatus() != 200) {
+		if (shopResult.getStatus() != 200) {
 			//如果token不存在，未登录状态，跳转到sso系统的登录页面。用户登录成功后，跳转到当前请求的url
 			response.sendRedirect(SSO_URL + "/page/login?redirect=" + request.getRequestURL());
 			//拦截

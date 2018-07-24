@@ -32,13 +32,13 @@ public class LoginInterceptor implements HandlerInterceptor {
 			return true;
 		}
 		//3.取到token，需要调用sso系统的服务，根据token取用户信息
-		ShopResult e3Result = tokenService.getUserByToken(token);
+		ShopResult shopResult = tokenService.getUserByToken(token);
 		//4.没有取到用户信息。登录过期，直接放行。
-		if (e3Result.getStatus() != 200) {
+		if (shopResult.getStatus() != 200) {
 			return true;
 		}
 		//5.取到用户信息。登录状态。
-		TbUser user = (TbUser) e3Result.getData();
+		TbUser user = (TbUser) shopResult.getData();
 		//6.把用户信息放到request中。只需要在Controller中判断request中是否包含user信息。放行
 		request.setAttribute("user", user);
 		return true;
